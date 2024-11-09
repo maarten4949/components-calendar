@@ -1,0 +1,77 @@
+.calendar {
+  background-color: lightgray;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+  text-align: center;
+  box-sizing: border-box;
+}
+.calendar_header {
+  display: grid;
+  grid-template: auto auto / 1fr 1fr;
+  grid-template-areas: "month year" "days days";
+  gap: 0.5rem;
+  width: max-content;
+}
+.days {
+  grid-area: days;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+.calendar_body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 0.5rem;
+  justify-items: center;
+  align-items: center;
+}
+.calendar_body div {
+  height: 100%;
+  width: 100%;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 0.2rem;
+}
+.calendar_body .selectable {
+  background-color: lightblue;
+}
+.calendar_body .selected {
+  background-color: blue;
+}
+.month {
+  grid-area: month;
+}
+.year {
+  grid-area: year;
+}
+.month,
+.year {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+}
+button {
+  cursor: pointer;
+}
+
+.selectable div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selectable:has(div) {
+  padding: 0;
+}
+.selectable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0.2rem;
+  border: none;
+  border: 2px solid black;
+}
